@@ -1,0 +1,50 @@
+<td colspan="5">
+  <ul class="forty">
+    {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
+  </ul>
+  <ul class="sixty">
+    <li>
+    	{{#facet name="Description"}}<p class="description">{{displayValue}}</p>{{/facet}}
+    </li>
+    <li>
+    <b>website</b>
+    {{#facet name="Website"}}
+    <span class="facet-values">
+      <a href="{{displayValue}}" class="webkite-website">{{displayValue}}</a>
+    </span>
+    {{/facet}}
+    </li>
+    <li>
+    <b>email</b>
+    {{#facet name="Email"}}
+    <span class="facet-values">
+      <a href="mailto:{{displayValue}}" class="webkite-email">{{displayValue}}</a>
+    </span>
+    {{/facet}}
+    </li>
+    <li>
+    <b>fax number</b>
+    {{#facet name="Fax Number"}}
+    <span class="facet-values">
+      <a href="tel:{{displayValue}}">{{displayValue}}</a>
+    </span>
+    {{/facet}}
+    </li>
+    <li>
+    <b>facebook</b>
+    {{#facet name="Facebook"}}
+    <span class="facet-values">
+      <a href="{{displayValue}}" class="webkite-website">{{displayValue}}</a>
+    </span>
+    {{/facet}}
+    </li>
+    <li>
+    <b>twitter</b>
+    {{#facet name="Twitter"}}
+    <span class="facet-values">
+      <a href="https://twitter.com/{{displayValue}}">{{displayValue}}</a>
+    </span>
+    {{/facet}}
+    </li>
+  </ul>
+</td><!-- webkite-item-details -->

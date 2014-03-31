@@ -1,0 +1,377 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700");
+
+//COLOR PALETTE
+@import 'light-palette';
+
+//SIZES
+$mainGutter: 1.25em;
+
+//MIXINS
+@import 'mixins';
+  
+/* RESET */
+#webkite-results{
+  @import 'reset';
+  }
+
+/****************************************** BEGIN STYLES */
+#webkite-results{
+  background: $backgroundColor;
+  border: 1px solid $lighterOpacity;
+  @include roundedUp(.625em);
+  @include boxedUp;
+  font-family:"Open Sans";
+  font-size: 16px;
+  max-width: 43.75em;
+  margin: 0 auto;
+  padding: $mainGutter;
+  a{color:$linkColor;
+      text-decoration: none; 
+    &:hover{color: $linkHover;}
+    }
+  }
+  
+/* TYPOGRAPHY */
+#webkite-results{
+  h2{
+    @include hyphenGreat;
+    color: $medOpacity;
+    display: inline-block;
+    font: 700 1.125em/1 "Open Sans";
+    margin: 0;
+    }
+  p, li{
+    color: $lightOpacity;
+    }
+  }
+
+//*******************************************UNIVERSALS
+@import 'light-universals';
+  
+/********************************************** BLOCKS */
+#webkite-results{
+
+  table{
+    border: 0 none;
+    border-collapse: separate;
+    width: 100%;
+    margin-bottom: $mainGutter;
+    max-width: 100%;
+    text-align: left;
+    }
+  thead{
+    @include boxedUp;
+    background: $lightestOpacity;
+    border: 1px solid $lighterOpacity;
+    }
+  th, td{
+    @include boxedUp;
+    border: 0 none;
+    line-height: 1em;
+    padding: $mainGutter/2;
+    vertical-align: middle;
+    &.webkite-name{max-width: 10em;}
+    &.webkite-address{max-width: 10em;}
+    }
+  th.webkite-name, th.webkite-address{border-right: 2px groove $lightestOpacity;}
+  th{
+    color: $lightOpacity;
+    font-size: .875em;
+    a{
+      color: $lightOpacity;
+      padding: 0;
+      font-weight: 700;
+      &:hover{color: $lightOpacity;}
+      }
+    }
+  td a{
+    font-size: .875em;
+    &.webkite-address span, &.webkite-email, &.webkite-website{@include ellipsisThis;}
+    &.webkite-website{max-width: 10em;}
+    &.webkite-email{display: block;}
+    }
+    a.more-button, a.less-button{
+      background: url("open-close.png");
+      display: inline-block;
+      height: 18px;
+      width: 18px;
+      }
+    a.more-button{
+      background-position: 0 0;
+      &:hover{background-position: 0 -18px;}
+      &:active{background-position: 0 -36px;}
+      }
+    a.less-button{
+      background-position: -18px 0;
+      &:hover{background-position: -18px -18px;}
+      &:active{background-position: -18px -36px;}
+      }
+ 
+ } 
+
+/************************************ TABLE RESULTS */
+#webkite-results{
+  
+  tbody:nth-child(odd){
+    background: $lighterthanlightestOpacity;
+    }
+  tbody:nth-child(even){
+    background: $lighterevenstillOpacity;
+    }
+  div.image-thumbnail{
+    @include roundedUp(.188em);
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    margin: $mainGutter/2;
+    height: 3.125em;
+    width: 3.125em;
+    }
+  th.image-thumbnail, td.image-thumbnail{padding: 0; width: 70px;}
+  th.open-toggle, td.open-toggle{
+    padding: 0;
+    text-align: center;
+    width: 2.375em;
+    }
+  th.webkite-apply-sort a{
+    &.asc:before, &.desc:before{
+      background: url("sort-direction.png") no-repeat;
+      content: "";
+      display: inline-block;
+      height: 5px;
+      width: 10px;
+      position: absolute;
+      top: $mainGutter/2;
+      left: $mainGutter/2;
+      }
+    &.asc:before{background-position: 0 0;}
+    &.desc:before{background-position: 0 -5px;}
+    }
+  td ul{
+    li{width: 100%; margin-bottom: $mainGutter/2;}
+    b{font-weight: 700;}
+    b, .facet-values{
+      display: inline-block;
+      width: 100%;
+      }
+    span.address a > span{display: inline-block; width: 100%;}
+    .webkite-address .city, .webkite-address  .state{display: inline;}
+    .city + .state:before{content: ", ";}
+    }
+      
+  }
+  
+/************************************ TABLE ITEM DETAILS */ 
+#webkite-results{
+  
+  .webkite-item-details{
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 5%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.02)), color-stop(5%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#00000000',GradientType=0 );
+    position: relative;
+    ul, div{
+      @include boxedUp;
+      display: inline-block;
+      vertical-align: top;
+      &.forty{max-width: 39%; width: 39%;}
+      &.sixty{max-width: 59%; width: 59%; padding-left: $mainGutter;}
+      }
+      img{
+      @include roundedUp(.325em);
+      width: 100%;
+      max-width: 100%; height: auto;
+      margin-bottom: $mainGutter;
+      }
+      li{line-height: 1.2em;padding-bottom: $mainGutter;}
+      b, span.facet-values{display: inline-block; width: 49%; vertical-align: top;}
+      b{font-weight: 700;}
+    }
+  
+  }
+
+/************************************** INLINE FILTERS */
+#webkite-results{
+
+  .sixty li b, td li b{
+    position: relative;
+    &.inline-filter-button + .facet-values{padding-top: $mainGutter/4;}
+    > .webkite-toggle{
+      @include boxedUp;
+      @include roundedUp(.188em);
+      border: 1px solid transparent;
+      color: $lightOpacity;
+      cursor: pointer;
+      display: inline-block;
+      font: 700 1em/1.3 "Open Sans";
+      margin: 0;
+      padding: $mainGutter/4 $mainGutter/4;
+      height: 2em;
+      margin-left: -$mainGutter/4;
+      i{
+        background: url("angle-light.png") center center no-repeat;
+        display: inline-block;
+        height: 10px;
+        margin-left: $mainGutter/2;
+        pointer-events: none;
+        width: 10px;
+        }
+      &:hover{
+        border: 1px solid $lighterOpacity;
+        background: $lightestOpacity;
+        }
+      }
+    }
+  .sixty .inline-filter-menu, td .inline-filter-menu{
+    @include roundedUp(.375em);
+    @include shadowHere;
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    position: absolute; 
+    background: white;
+    padding: $mainGutter/2 0;
+    top: $mainGutter/2;
+    left: $mainGutter/2;
+    margin: 0;
+    max-height: 12.5em;
+    overflow-y: auto;
+    z-index: 2;
+    li {
+      padding-bottom: 0;
+      a{
+        color: $linkColor;
+        display: block;
+        font-size: .875em;
+        font-weight: 400;
+        max-width: 100%;
+        padding: $mainGutter/8 $mainGutter $mainGutter/8 $mainGutter/2;
+        white-space: pre;
+        &:hover{background: $linkColor;color: white;}
+        }
+      }
+    }
+  
+}
+
+/******************************************* NO RESULTS */
+#webkite-results{
+  
+  .webkite-no-results{
+    padding: $mainGutter 0;
+    h2{
+      margin-bottom: $mainGutter;
+      }
+    }
+
+  }
+
+/************************************** ELEMENT QUERIES */
+
+#webkite-results.xs{
+  .webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
+    width: 100%;
+    padding-right: 0;
+    }
+  .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{
+    width: 100%;
+    }
+  .webkite-sort-area > .webkite-toggle i{
+    float: right; margin-top: $mainGutter/4;
+    }
+  .sort-menu{width: 95%;}
+  .webkite-sort-area+.webkite-filter-area{
+    margin-top: $mainGutter;
+    }
+  .webkite-filter-area{
+    margin-top: $mainGutter;
+    margin-left: 0;
+    padding-left: 0;
+    }
+  .webkite-item-details{ul.forty, ul.sixty{max-width:100%;width: 100%; padding-left: 0;}}
+  .forty li, .sixty li{
+    width: 100%;
+    b, .facet-values{width: 100%;}
+    .webkite-toggle{width: auto;}
+    }
+  .forty .inline-filter-menu li a, .sixty .inline-filter-menu li a{
+    max-width: 100%;
+    width: auto;
+    }
+  .webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
+    text-align: center;
+    }
+  .webkite-branding-area{
+    padding-bottom: $mainGutter; 
+    }
+  .webkite-results-footer{
+    height: 2.813em*2+$mainGutter;
+    }
+  .webkite-address, .webkite-name{border: none;}
+  .webkite-name{li{margin-bottom: $mainGutter/2;width: 100%;}}
+   td{vertical-align: top; &.open-toggle{vertical-align: middle;}}
+    
+  }//end xs
+  
+#webkite-results.sm{
+  .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{
+    width: 100%;
+    }
+  .webkite-sort-area > .webkite-toggle i{
+    float: right; margin-top: $mainGutter/4;
+    }
+  .sort-menu{width: 95%;}
+  .webkite-sort-area+.webkite-filter-area{
+    margin-top: $mainGutter;
+    }
+  .webkite-filter-area{
+    margin-left: 0;
+    padding-left: 0;
+    }
+   .webkite-item-details ul.forty{max-width: 43%; width: 43%;}
+   .webkite-item-details ul.sixty{max-width: 55%; width: 55%;}
+  .forty li, .sixty li{
+    width: 100%;
+    b, .facet-values{width: 100%;}
+    .webkite-toggle{width: auto;}
+    }
+  .webkite-address{border: none; 
+    li{margin-bottom: $mainGutter/2;}
+    }
+  .webkite-name{
+    max-width: 8em;
+    h2{line-height: 1.2em;}
+    }
+    td{vertical-align: top; &.open-toggle{vertical-align: middle;}}
+    th.image-thumbnail, td.image-thumbnail{width: 45px;}
+    div.image-thumbnail{width: 1.563em; height: 1.563em;}
+    
+  }//end sm
+  
+/***************************************  DISPLAY RULES */
+#webkite-results.xs{
+  .until-xs, .until-sm, .sm-only, .md-only, .lg-only{display: none;}
+  .xs-only, .webkite-results-header .xs-only{display: inline-block; width: 100%;}
+  td.xs-only, th.xs-only{display: table-cell;}
+  }
+#webkite-results.sm{
+  .until-sm, .xs-only, .md-only, .lg-only{display: none;}
+  .sm-only{display: inline-block;}
+  td.sm-only, th.sm-only{display: table-cell;}
+  }
+#webkite-results, #webkite-results.md, #webkite-results.xl{
+  .until-md, .xs-only, .sm-only, .lg-only{display: none;}
+  .webkite-results-header .xs-only{display: none;}
+  .md-only{display: inline-block;}
+  td.md-only, th.md-only{display: table-cell;}
+  th span.md-only{line-height: 1;}
+  }
+#webkite-results.lg{
+  .until-lg, .xs-only, .sm-only, .md-only{display: none;}
+  .lg-only{display: inline-block;}
+  td.lg-only, th.lg-only{display: table-cell;}
+  th span.lg-only{line-height: 1;}
+  }
+  
