@@ -34,7 +34,6 @@ $mainGutter: 1.25em;
 /* TYPOGRAPHY */
 #webkite-results{
   h2{
-    @include hyphenGreat;
     color: $medOpacity;
     display: inline-block;
     font: 700 1.125em/1 "Open Sans";
@@ -71,9 +70,9 @@ $mainGutter: 1.25em;
     padding: $mainGutter/2;
     vertical-align: middle;
     &.webkite-name{max-width: 10em;}
-    &.webkite-address{max-width: 10em;}
+    &.webkite-review{max-width: 10em;}
     }
-  th.webkite-name, th.webkite-address{border-right: 2px groove $lightestOpacity;}
+  th.webkite-name, th.webkite-review{border-right: 2px groove $lightestOpacity;}
   th{
     color: $lightOpacity;
     font-size: .875em;
@@ -86,9 +85,8 @@ $mainGutter: 1.25em;
     }
   td a{
     font-size: .875em;
-    &.webkite-address span, &.webkite-email, &.webkite-website{@include ellipsisThis;}
+    &.webkite-website{@include ellipsisThis;}
     &.webkite-website{max-width: 10em;}
-    &.webkite-email{display: block;}
     }
     a.more-button, a.less-button{
       background: url("open-close.png");
@@ -97,18 +95,18 @@ $mainGutter: 1.25em;
       width: 18px;
       }
     a.more-button{
-      background-position: -36px 0;
-      &:hover{background-position: -36px -18px;}
-      &:active{background-position: -36px -36px;}
+      background-position: 0 0;
+      &:hover{background-position: 0 -18px;}
+      &:active{background-position: 0 -36px;}
       }
     a.less-button{
-      background-position: -54px 0;
-      &:hover{background-position: -54px -18px;}
-      &:active{background-position: -54px -36px;}
+      background-position: -18px 0;
+      &:hover{background-position: -18px -18px;}
+      &:active{background-position: -18px -36px;}
       }
  
- }
-  
+ } 
+
 /************************************ TABLE RESULTS */
 #webkite-results{
   
@@ -117,6 +115,9 @@ $mainGutter: 1.25em;
     }
   tbody:nth-child(even){
     background: $lighterevenstillOpacity;
+    }
+  tbody tr{
+    height: 4.375em;
     }
   div.image-thumbnail{
     @include roundedUp(.188em);
@@ -144,19 +145,21 @@ $mainGutter: 1.25em;
       top: $mainGutter/2;
       left: $mainGutter/2;
       }
-    &.asc:before{background-position: -10px 0;}
-    &.desc:before{background-position: -10px -5px;}
+    &.asc:before{background-position: 0 0;}
+    &.desc:before{background-position: 0 -5px;}
     }
   td ul{
-    li{width: 100%; margin-bottom: $mainGutter/2;}
+    li{width: 100%;}
     b{font-weight: 700;}
     b, .facet-values{
       display: inline-block;
       width: 100%;
       }
     span.address a > span{display: inline-block; width: 100%;}
-    .webkite-address .city, .webkite-address  .state{display: inline;}
+    .city, .state, .country{display: inline;}
     .city + .state:before{content: ", ";}
+    .city + .country:before{content: ", ";}
+    .state + .country:before{content: ", ";}
     }
       
   }
@@ -166,7 +169,7 @@ $mainGutter: 1.25em;
   
   .webkite-item-details{
     background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 5%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.02)), color-stop(5%,rgba(0,0,0,0)));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.05)), color-stop(5%,rgba(0,0,0,0)));
     background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 5%);
     background: -o-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 5%);
     background: -ms-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 5%);
@@ -177,8 +180,8 @@ $mainGutter: 1.25em;
       @include boxedUp;
       display: inline-block;
       vertical-align: top;
-      &.forty{max-width: 39%; width: 39%;}
-      &.sixty{max-width: 59%; width: 59%; padding-left: $mainGutter;}
+      &.forty{max-width: 38%; width: 38%;}
+      &.sixty{max-width: 60%; width: 60%; padding-left: $mainGutter;}
       }
       img{
       @include roundedUp(.325em);
@@ -190,20 +193,13 @@ $mainGutter: 1.25em;
       b, span.facet-values{display: inline-block; width: 49%; vertical-align: top;}
       b{font-weight: 700;}
     }
-  tr + tr > td{
-    column-span: 5;
-    -webkit-column-span: 5; /* Safari & Chrome */
-    -moz-column-span: 5; /* Firefox */
-    -ms-column-span: 5; /* Internet Explorer */
-    -o-column-span: 5; /* Opera */
-    }
   
   }
 
 /************************************** INLINE FILTERS */
 #webkite-results{
 
-  td li b, .sixty li b{
+  .sixty li b, td li b{
     position: relative;
     &.inline-filter-button + .facet-values{padding-top: $mainGutter/4;}
     > .webkite-toggle{
@@ -219,7 +215,7 @@ $mainGutter: 1.25em;
       height: 2em;
       margin-left: -$mainGutter/4;
       i{
-        background: url("angle-dark.png") center center no-repeat;
+        background: url("angle-light.png") center center no-repeat;
         display: inline-block;
         height: 10px;
         margin-left: $mainGutter/2;
@@ -232,7 +228,7 @@ $mainGutter: 1.25em;
         }
       }
     }
-  td .inline-filter-menu, .sixty .inline-filter-menu{
+  .sixty .inline-filter-menu, td .inline-filter-menu{
     @include roundedUp(.375em);
     @include shadowHere;
     -webkit-padding-start: 0;
@@ -316,7 +312,7 @@ $mainGutter: 1.25em;
   .webkite-results-footer{
     height: 2.813em*2+$mainGutter;
     }
-  .webkite-address, .webkite-name{border: none;}
+  .webkite-review, .webkite-name{border: none;}
   .webkite-name{li{margin-bottom: $mainGutter/2;width: 100%;}}
    td{vertical-align: top; &.open-toggle{vertical-align: middle;}}
     
@@ -344,7 +340,7 @@ $mainGutter: 1.25em;
     b, .facet-values{width: 100%;}
     .webkite-toggle{width: auto;}
     }
-  .webkite-address{border: none; 
+  .webkite-review{border: none; 
     li{margin-bottom: $mainGutter/2;}
     }
   .webkite-name{
@@ -360,7 +356,7 @@ $mainGutter: 1.25em;
 /***************************************  DISPLAY RULES */
 #webkite-results.xs{
   .until-xs, .until-sm, .sm-only, .md-only, .lg-only{display: none;}
-  .xs-only, .webkite-results-header .xs-only{display: inline-block;}
+  .xs-only, .webkite-results-header .xs-only{display: inline-block; width: 100%;}
   td.xs-only, th.xs-only{display: table-cell;}
   }
 #webkite-results.sm{

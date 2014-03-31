@@ -34,7 +34,6 @@ $mainGutter: 1.25em;
 /* TYPOGRAPHY */
 #webkite-results{
   h2{
-    @include hyphenGreat;
     color: $medOpacity;
     display: inline-block;
     font: 700 1.125em/1 "Open Sans";
@@ -71,9 +70,9 @@ $mainGutter: 1.25em;
     padding: $mainGutter/2;
     vertical-align: middle;
     &.webkite-name{max-width: 10em;}
-    &.webkite-address{max-width: 10em;}
+    &.webkite-review{max-width: 10em;}
     }
-  th.webkite-name, th.webkite-address{border-right: 2px groove $lightestOpacity;}
+  th.webkite-name, th.webkite-review{border-right: 2px groove $lightestOpacity;}
   th{
     color: $lightOpacity;
     font-size: .875em;
@@ -86,9 +85,8 @@ $mainGutter: 1.25em;
     }
   td a{
     font-size: .875em;
-    &.webkite-address span, &.webkite-email, &.webkite-website{@include ellipsisThis;}
+    &.webkite-website{@include ellipsisThis;}
     &.webkite-website{max-width: 10em;}
-    &.webkite-email{display: block;}
     }
     a.more-button, a.less-button{
       background: url("open-close.png");
@@ -117,6 +115,9 @@ $mainGutter: 1.25em;
     }
   tbody:nth-child(even){
     background: $lighterevenstillOpacity;
+    }
+  tbody tr{
+    height: 4.375em;
     }
   div.image-thumbnail{
     @include roundedUp(.188em);
@@ -148,15 +149,17 @@ $mainGutter: 1.25em;
     &.desc:before{background-position: 0 -5px;}
     }
   td ul{
-    li{width: 100%; margin-bottom: $mainGutter/2;}
+    li{width: 100%;}
     b{font-weight: 700;}
     b, .facet-values{
       display: inline-block;
       width: 100%;
       }
     span.address a > span{display: inline-block; width: 100%;}
-    .webkite-address .city, .webkite-address  .state{display: inline;}
+    .city, .state, .country{display: inline;}
     .city + .state:before{content: ", ";}
+    .city + .country:before{content: ", ";}
+    .state + .country:before{content: ", ";}
     }
       
   }
@@ -177,8 +180,8 @@ $mainGutter: 1.25em;
       @include boxedUp;
       display: inline-block;
       vertical-align: top;
-      &.forty{max-width: 39%; width: 39%;}
-      &.sixty{max-width: 59%; width: 59%; padding-left: $mainGutter;}
+      &.forty{max-width: 38%; width: 38%;}
+      &.sixty{max-width: 60%; width: 60%; padding-left: $mainGutter;}
       }
       img{
       @include roundedUp(.325em);
@@ -309,7 +312,7 @@ $mainGutter: 1.25em;
   .webkite-results-footer{
     height: 2.813em*2+$mainGutter;
     }
-  .webkite-address, .webkite-name{border: none;}
+  .webkite-review, .webkite-name{border: none;}
   .webkite-name{li{margin-bottom: $mainGutter/2;width: 100%;}}
    td{vertical-align: top; &.open-toggle{vertical-align: middle;}}
     
@@ -337,7 +340,7 @@ $mainGutter: 1.25em;
     b, .facet-values{width: 100%;}
     .webkite-toggle{width: auto;}
     }
-  .webkite-address{border: none; 
+  .webkite-review{border: none; 
     li{margin-bottom: $mainGutter/2;}
     }
   .webkite-name{
