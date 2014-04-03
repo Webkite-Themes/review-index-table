@@ -84,7 +84,6 @@ $mainGutter: 1.25em;
       }
     }
   td a{
-    font-size: .875em;
     &.webkite-website{@include ellipsisThis;}
     &.webkite-website{max-width: 10em;}
     }
@@ -160,6 +159,7 @@ $mainGutter: 1.25em;
     .city + .state:before{content: ", ";}
     .city + .country:before{content: ", ";}
     .state + .country:before{content: ", ";}
+    .zip + .country:before{content: ", ";}
     }
       
   }
@@ -180,8 +180,8 @@ $mainGutter: 1.25em;
       @include boxedUp;
       display: inline-block;
       vertical-align: top;
-      &.forty{max-width: 38%; width: 38%;}
-      &.sixty{max-width: 60%; width: 60%; padding-left: $mainGutter;}
+      &.forty{max-width: 37%; width: 37%;}
+      &.sixty{max-width: 61%; width: 61%; padding-left: $mainGutter;}
       }
       img{
       @include roundedUp(.325em);
