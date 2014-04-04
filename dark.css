@@ -573,6 +573,8 @@
   content: ", "; }
 #webkite-results td ul .zip + .country:before {
   content: ", "; }
+#webkite-results td ul .state + .zip {
+  content: " "; }
 
 /************************************ TABLE ITEM DETAILS */
 #webkite-results .webkite-item-details {

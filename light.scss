@@ -160,6 +160,7 @@ $mainGutter: 1.25em;
     .city + .country:before{content: ", ";}
     .state + .country:before{content: ", ";}
     .zip + .country:before{content: ", ";}
+    .state + .zip{content: " ";}
     }
       
   }
