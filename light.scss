@@ -64,9 +64,9 @@ $colorVariant:light;
     border: 0 none;
     line-height: 1em;
     padding: $mainGutter/2;
-    vertical-align: middle;
-    &.webkite-name{max-width: 10em;}
-    &.webkite-review{max-width: 10em;}
+    vertical-align: top;
+    &.webkite-review{max-width: 12em;}
+    &.webkite-date{max-width: 10em;}
     }
   th.webkite-name, th.webkite-review{border-right: 2px groove $lightestOpacity;}
   th{
@@ -83,22 +83,28 @@ $colorVariant:light;
     &.webkite-website{@include ellipsisThis;}
     &.webkite-website{max-width: 10em;}
     }
-    a.more-button, a.less-button{
-      background: url("open-close.png");
-      display: inline-block;
-      height: 18px;
-      width: 18px;
-      }
-    a.more-button{
-      background-position: 0 0;
-      &:hover{background-position: 0 -18px;}
-      &:active{background-position: 0 -36px;}
-      }
-    a.less-button{
-      background-position: -18px 0;
-      &:hover{background-position: -18px -18px;}
-      &:active{background-position: -18px -36px;}
-      }
+  a.more-button, a.less-button{
+    background: url("open-close.png");
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    }
+  a.more-button{
+    background-position: 0 0;
+    &:hover{background-position: 0 -18px;}
+    &:active{background-position: 0 -36px;}
+    }
+  a.less-button{
+    background-position: -18px 0;
+    &:hover{background-position: -18px -18px;}
+    &:active{background-position: -18px -36px;}
+    }
+  .facet-values.summary p{
+  	display: inline-block;
+  	line-height: 1.2em;
+  	max-height: 3.6em;
+  	overflow: hidden;
+  	}
  
  } 
 
@@ -127,6 +133,7 @@ $colorVariant:light;
   th.open-toggle, td.open-toggle{
     padding: 0;
     text-align: center;
+    vertical-align: middle;
     width: 2.375em;
     }
   th.webkite-apply-sort a{
@@ -143,6 +150,9 @@ $colorVariant:light;
     &.asc:before{background-position: 0 0;}
     &.desc:before{background-position: 0 -5px;}
     }
+  td.webkite-review li{
+	  margin-bottom: $mainGutter/2;
+  	}
   td ul{
     li{width: 100%;}
     b{font-weight: 700;}
@@ -177,8 +187,8 @@ $colorVariant:light;
       @include boxedUp;
       display: inline-block;
       vertical-align: top;
-      &.forty{max-width: 37%; width: 37%;}
-      &.sixty{max-width: 61%; width: 61%; padding-left: $mainGutter;}
+      &.forty{max-width: 34%; width: 34%;}
+      &.sixty{max-width: 65%; width: 65%; padding-left: $mainGutter;}
       }
       img{
       @include roundedUp(.325em);
@@ -309,7 +319,10 @@ $colorVariant:light;
   .webkite-results-footer{
     height: 2.813em*2+$mainGutter;
     }
-  .webkite-review, .webkite-name{border: none;}
+  .webkite-review, .webkite-name{
+  	border: none;
+  	b{margin-bottom: $mainGutter/2;}
+  	}
   .webkite-name{li{margin-bottom: $mainGutter/2;width: 100%;}}
    td{vertical-align: top; &.open-toggle{vertical-align: middle;}}
     
@@ -337,7 +350,9 @@ $colorVariant:light;
     b, .facet-values{width: 100%;}
     .webkite-toggle{width: auto;}
     }
-  .webkite-review{border: none; 
+  .webkite-review{
+  	border: none;
+  	b{margin-bottom: $mainGutter/2;} 
     li{margin-bottom: $mainGutter/2;}
     }
   .webkite-name{

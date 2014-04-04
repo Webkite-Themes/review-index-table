@@ -17,8 +17,8 @@
         <span>Name</span>
         {{/if}}
       </th>
-      <th class="webkite-review until-xs"><span class="md-only">Review</span></th>
-      <th class="until-sm"><span>Date</span></th>
+      <th class="webkite-review until-xs"><span class="md-only">Review Summary</span></th>
+      <th class="webkite-date until-sm"><span>Posted On</span></th>
       <th class="open-toggle"></th>
     </tr>
   </thead>
@@ -33,37 +33,51 @@
           <li>
             {{#facet name="Name"}}<h2>{{displayValue}}</h2>{{/facet}} 
           </li>
+          <li class="xs-only">
+	          <b>review summary</b>
+        		{{#facet name="Review Summary"}}
+        		<span class="facet-values summary">
+        			<p>{{displayValue}}</p>
+        		</span>
+        		{{/facet}}
+          </li>
         	<li class="xs-only">
-          	<b>review</b>
             {{#facet name="Review URL"}}
             <span class="facet-values">
-              <a href="{{displayValue}}">Link to Review</a>
+              <a href="{{displayValue}}">Full Review</a>
             </span>
             {{/facet}}
         	</li>
         	<li class="xs-only">
-          	<b>date</b>
+          	<b>posted on</b>
             {{#facet name="Review Date"}}<span class="facet-values">{{displayValue}}</span>{{/facet}}
         	</li>
         </ul>
       </td>
       <td class="webkite-review until-xs">
         <ul>
+        	<li>
+        		<b class="sm-only">review summary</b>
+        		{{#facet name="Review Summary"}}
+        		<span class="facet-values summary">
+        			<p>{{displayValue}}</p>
+        		</span>
+        		{{/facet}}
+        	</li>
 					<li class="until-xs">
-          	<b class="sm-only">review</b>
             {{#facet name="Review URL"}}
             <span class="facet-values">
-              <a href="{{displayValue}}">Link to Review</a>
+              <a href="{{displayValue}}">Full Review</a>
             </span>
             {{/facet}}
         	</li>
         	<li class="sm-only">
-          	<b>date</b>
+          	<b>posted on</b>
             {{#facet name="Review Date"}}<span class="facet-values">{{displayValue}}</span>{{/facet}}
         	</li>
         </ul>
       </td>
-      <td class="md-only">
+      <td class="webkite-date md-only">
         <ul>
         	<li>{{#facet name="Review Date"}}<span class="facet-values">{{displayValue}}</span>{{/facet}}</li>
         </ul>
