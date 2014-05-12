@@ -476,7 +476,7 @@ $tokenFifth: #6f7ca8;
 	/******************************* FILTER OVERVIEW AND SHADE */
 	#webkite-results{
 	  
-	  .webkite-truncated:before{
+	  .filter-token-wrapper.webkite-truncated:before{
 	    content: "";
 	    @include gradiateHorizontal;
 	    height: auto; width: 1.5em;
