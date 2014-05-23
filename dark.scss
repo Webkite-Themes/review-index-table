@@ -260,6 +260,8 @@ $colorVariant:dark;
   
   .webkite-no-results{
     padding: $mainGutter 0;
+    margin-bottom: $mainGutter;
+    border-bottom:1px solid $lightestOpacity;
     h2{
       margin-bottom: $mainGutter;
       }
@@ -270,25 +272,6 @@ $colorVariant:dark;
 /************************************** ELEMENT QUERIES */
 
 #webkite-results.xs{
-  .webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
-    width: 100%;
-    padding-right: 0;
-    }
-  .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{
-    width: 100%;
-    }
-  .webkite-sort-area > .webkite-toggle i{
-    float: right; margin-top: $mainGutter/4;
-    }
-  .sort-menu{width: 95%;}
-  .webkite-sort-area+.webkite-filter-area{
-    margin-top: $mainGutter;
-    }
-  .webkite-filter-area{
-    margin-top: $mainGutter;
-    margin-left: 0;
-    padding-left: 0;
-    }
   .webkite-item-details{ul.forty, ul.sixty{max-width:100%;width: 100%; padding-left: 0;}}
   .forty li, .sixty li{
     width: 100%;
@@ -299,36 +282,13 @@ $colorVariant:dark;
     max-width: 100%;
     width: auto;
     }
-  .webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
-    text-align: center;
-    }
-  .webkite-branding-area{
-    padding-bottom: $mainGutter; 
-    }
-  .webkite-results-footer{
-    height: 2.813em*2+$mainGutter;
-    }
   .webkite-review, .webkite-name{border: none;}
   .webkite-name{li{margin-bottom: $mainGutter/2;width: 100%;}}
    td{vertical-align: top; &.open-toggle{vertical-align: middle;}}
     
-  }//end xs
+  }
   
 #webkite-results.sm{
-  .webkite-filter-area, .webkite-sort-area, .webkite-sort-area > .webkite-toggle{
-    width: 100%;
-    }
-  .webkite-sort-area > .webkite-toggle i{
-    float: right; margin-top: $mainGutter/4;
-    }
-  .sort-menu{width: 95%;}
-  .webkite-sort-area+.webkite-filter-area{
-    margin-top: $mainGutter;
-    }
-  .webkite-filter-area{
-    margin-left: 0;
-    padding-left: 0;
-    }
    .webkite-item-details ul.forty{max-width: 43%; width: 43%;}
    .webkite-item-details ul.sixty{max-width: 55%; width: 55%;}
   .forty li, .sixty li{
@@ -347,7 +307,7 @@ $colorVariant:dark;
     th.image-thumbnail, td.image-thumbnail{width: 45px;}
     div.image-thumbnail{width: 1.563em; height: 1.563em;}
     
-  }//end sm
+  }
   
 /***************************************  DISPLAY RULES */
 #webkite-results.xs{
