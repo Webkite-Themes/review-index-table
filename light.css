@@ -671,11 +671,15 @@
     margin-bottom: 20px; }
   #webkite-results .webkite-item-details li {
     line-height: 1.2em;
-    padding-bottom: 20px; }
+    padding-bottom: 1.25em; }
   #webkite-results .webkite-item-details b, #webkite-results .webkite-item-details span.facet-values {
     display: inline-block;
     width: 49%;
     vertical-align: top; }
+  #webkite-results .webkite-item-details span.webkite-price {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
   #webkite-results .webkite-item-details b {
     font-weight: 700; }
 
@@ -699,14 +703,14 @@
     display: inline-block;
     font: 700 1em/1.3 "Open Sans";
     margin: 0;
-    padding: 5px 5px;
+    padding: 0.3125em;
     height: 2em;
-    margin-left: -5px; }
+    margin-left: -0.3125em; }
     #webkite-results .sixty li b > .webkite-toggle i, #webkite-results td li b > .webkite-toggle i {
       background: url("angle-light.png") center center no-repeat;
       display: inline-block;
       height: 10px;
-      margin-left: 10px;
+      margin-left: 0.625em;
       pointer-events: none;
       width: 10px; }
     #webkite-results .sixty li b > .webkite-toggle:hover, #webkite-results td li b > .webkite-toggle:hover {
