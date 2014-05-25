@@ -23,3 +23,9 @@ partials:
   - filters.handlebars.js
   - sorts.handlebars.js
   - result-details.handlebars.js
+  
+pagination:
+  - 10
+  - 25
+  - 50
+  - 100
